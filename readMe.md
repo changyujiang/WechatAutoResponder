@@ -1,4 +1,4 @@
-## Wechat auto responder
+## Wechat auto responder - learn Mybatis in parctice
 
 ### Basic function
 * Receive commands from user
