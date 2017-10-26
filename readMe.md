@@ -20,14 +20,14 @@
 
 ### Reviews
 * sqlSession的作用:
-..* 向sql语句传入参数;
-..* 执行sql语句;
-..* 获取执行sql语句的结果;
-..* 事物的控制;
+    * 向sql语句传入参数;
+    * 执行sql语句;
+    * 获取执行sql语句的结果;
+    * 事物的控制;
 
 * 如何得到sqlSession:
-..1. 通过配置文件获取数据库链接相关信息;
-..2. 通过配置信息构建SqlSessionFactory;
-..3. 通过SqlSessionFactory打开数据库会话SqlSession
+    1. 通过配置文件获取数据库链接相关信息;
+    2. 通过配置信息构建SqlSessionFactory;
+    3. 通过SqlSessionFactory打开数据库会话SqlSession
 
 * 单元测试
