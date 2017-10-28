@@ -24,9 +24,12 @@ public class MessageDao {
 	public List<Message> queryMessageList(String command, String description) {
 		DBAccess dBAccess = new DBAccess();
 		SqlSession sqlSession = null;
+		List<Message> messageList = new ArrayList<>();
 		try {
 			sqlSession = dBAccess.getSqlSession();
 			// execute SQL statement through sqlSession
+			messageList = sqlSession.selectList("Message.queryMessageList");
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -34,8 +37,7 @@ public class MessageDao {
 				sqlSession.close();
 			}
 		}
-		
-		return null;
+		return messageList;
 	}
 	
 	public static void main(String[] args) {

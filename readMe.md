@@ -31,3 +31,12 @@
     3. 通过SqlSessionFactory打开数据库会话SqlSession
 
 * 单元测试
+
+* table配置
+    * 配置sql语句; namespace.id;
+    * 配置java bean fields 和 database table column 对应关系;
+    * jdbcType 和 database type 对应关系
+    * configuration.xml \<mappers>\
+    ```
+    <resultMap type="com.wechatAuto.bean.Message" id="MessageResult">
+    ```
