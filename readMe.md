@@ -48,17 +48,22 @@
         * parameterType属性
         * foreach collection属性
     * 取值写法
-        * String与基本数据类型 _parameter
-        * 自定义类型(Message) 属性名(command)
-        * 集合 数组 :array List :list Map _parameter
-        * 集合中取出一条数据： 
+        * String and primitive type  
+            * _parameter
+        * 自定义类型 User defined Objects eg. Message
+            * 直接用属性名 eg. command
+        * 集合 Collection
+            * Array  :array 
+            * List   :list 
+            * Map    _parameter
+        * 集合中取出一条数据 Fetch one entry from collection： 
             * array[index] (String[]); 
             * array[index].attribute (Message[]);
             * list[index] (List<String>);
             * list[index].attribute (List<Message>);
             * key (Map<String,String>);
             * key.attribute (Map<String,Message>).
-        * 利用foreach标签从集合中取出数据：
+        * 利用foreach标签从集合中取出数据 Get entries from collection using foreach lable：
             i: for array,list is index, for map is key
             ```
             <foreach collection="array" index="i" item="item">
