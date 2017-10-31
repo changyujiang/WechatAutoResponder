@@ -17,6 +17,7 @@
 
 ### Todo
 * JSTL, EL 《java遇见html-jsp篇》
+* OGNL(mybatis配置文件) (struts2?) 
 
 ### Reviews
 * sqlSession的作用:
@@ -40,3 +41,29 @@
     ```
     <resultMap type="com.wechatAuto.bean.Message" id="MessageResult">
     ```
+
+* OGNL
+    * OGNL取值范围
+        * 标签的属性中
+        * parameterType属性
+        * foreach collection属性
+    * 取值写法
+        * String与基本数据类型 _parameter
+        * 自定义类型(Message) 属性名(command)
+        * 集合 数组 :array List :list Map _parameter
+        * 集合中取出一条数据： 
+            * array[index] (String[]); 
+            * array[index].attribute (Message[]);
+            * list[index] (List<String>);
+            * list[index].attribute (List<Message>);
+            * key (Map<String,String>);
+            * key.attribute (Map<String,Message>).
+        * 利用foreach标签从集合中取出数据：
+            i: for array,list is index, for map is key
+            ```
+            <foreach collection="array" index="i" item="item">
+            ```
+    * 操作符
+        * java 常用操作符 + - * / == != || &&
+        * 自己特有的操作符 and, or, mod, in, not in
+            
