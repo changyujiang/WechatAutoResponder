@@ -71,4 +71,14 @@
     * 操作符
         * java 常用操作符 + - * / == != || &&
         * 自己特有的操作符 and, or, mod, in, not in
-            
+
+* 配置log4j 调试动态SQL
+    * 键值对配置文件
+    ```
+    log4j.rootLogger=DEBUG, stdout
+    log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+    log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+    ### %d datetime %t thread %p level %c class %m message
+    log4j.appender.stdout.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+    log4j.logger.org.apache=INFO
+    ```
