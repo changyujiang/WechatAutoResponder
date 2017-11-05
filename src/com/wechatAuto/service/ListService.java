@@ -14,4 +14,11 @@ public class ListService {
 		List<Message> messageList = messageDao.queryMessageList(command, description);
 		return messageList;
 	}
+	
+	public void deleteOne(String id) {
+		if (id != null && !"".equals(id.trim())) {
+			MessageDao messageDao = new MessageDao();
+			messageDao.deleteOne(Integer.valueOf(id));
+		}
+	}
 }

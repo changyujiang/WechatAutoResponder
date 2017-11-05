@@ -43,6 +43,24 @@ public class MessageDao {
 		return messageList;
 	}
 	
+	public void deleteOne(int id) {
+		DBAccess dBAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = dBAccess.getSqlSession();
+			// execute SQL statement through sqlSession
+			sqlSession.delete("Message.deleteOne", id);
+			sqlSession.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return;
+	}
+	
 	public static void main(String[] args) {
 		MessageDao messageDao = new MessageDao();
 		messageDao.queryMessageList("", "");

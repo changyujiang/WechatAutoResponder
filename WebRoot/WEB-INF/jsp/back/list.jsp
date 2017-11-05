@@ -10,6 +10,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta http-equiv="X-UA-Compatible"content="IE=9; IE=8; IE=7; IE=EDGE" />
 		<title>内容列表页面</title>
 		<link href="<%= basePath %>Resources/css/all.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+			function deleteConfirm() {
+				val isDel = confirm("是否删除？");
+				if (isDel) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		</script>    
 	</head>
 	<body style="background: #e1e9eb;">
 		<form action="<%= basePath %>List.action" id="mainForm" method="post">
@@ -50,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<td>${message.description }</td>
 										<td>
 											<a href="#">修改</a>&nbsp;&nbsp;&nbsp;
-											<a href="#">删除</a>
+											<a href="${basePath}DeleteOne.action?id=${message.id}" onclick = "confirm('confirm to delete?')">删除</a>
 										</td>
 									</tr>	
 								</c:forEach>
@@ -70,5 +80,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 	    </form>
+
 	</body>
 </html>

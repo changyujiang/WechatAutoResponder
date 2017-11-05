@@ -82,3 +82,7 @@
     log4j.appender.stdout.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
     log4j.logger.org.apache=INFO
     ```
+    
+* 事务控制 transction
+    * 对于增删改jdbc connection 默认自动提交
+    * mybatis不会默认提交
