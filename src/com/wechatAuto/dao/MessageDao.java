@@ -61,6 +61,24 @@ public class MessageDao {
 		return;
 	}
 	
+	public void deleteBatch(List<Integer> ids) {
+		DBAccess dBAccess = new DBAccess();
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = dBAccess.getSqlSession();
+			// execute SQL statement through sqlSession
+			sqlSession.delete("Message.deleteBatch", ids);
+			sqlSession.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return;
+	}
+	
 	public static void main(String[] args) {
 		MessageDao messageDao = new MessageDao();
 		messageDao.queryMessageList("", "");
